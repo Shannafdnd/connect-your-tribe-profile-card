@@ -1,9 +1,29 @@
 <%- include('./partials/head') %>
 
-<main>
-<div class="card-container">
+    <main>
+        <!-- Front card -->
+        <div class="card-container-front">
+            <div class="img-container">
+                <img class="avatar" src="<%- avatar %>" alt="avatar">
+            </div>
+            <div class="full-name">
+                <p class="first-name"><%- name %><p>
+                <p>
+                    <span class="prefix"><%- prefix %></span> 
+                    <span class="last-name"><%- surname %></span>
+                </p>
+            </div>
+            <div class="logos">
+                <a class="logo" href="https://github.com/Shannafdnd" target="_blank"><img src="assets/GitHub_Invertocat_Logo.svg" alt="Github"></a>
+                <a class="logo" href="https://www.instagram.com/s.vdw_/" target="_blank"><img src="assets/free-instagram-86-433323.webp" alt="instagram"></a>
+                <a class="logo" href="mailto:shanna.vanderwerve@gmail.com" target="_blank"><img src="assets/free-gmail-32-761667.png" alt="gmail"></a>
+              </div>
+            <button class="turn-button" role="button"><img src="/assets/right-arrow.png" class="turn-icon"></button>
+        </div>
+        <!-- Back card -->
+        <div class="card-container-back">
+            
+        </div>
+    </main>
 
-</div>
-</main>
-
-<%- include('./partials/foot') %>
+    <%- include('./partials/foot') %>
