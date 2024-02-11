@@ -7,90 +7,114 @@ body {
   align-items: center;
 }
 
-.card-container-front {
+.card-container {
   width: 60vw;
   height: 35vw;
   border-radius: 3vw;
-  background-image: url("assets/background-shapes.svg"), url("assets/background-img.png");
-  background-size: contain;
-  overflow: hidden;
-  background-repeat: no-repeat;
   perspective: 1000px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  display: flex;
-  justify-content: space-between;
 
-  .img-container {
-    margin-top: 10%;
-    margin-left: 10%;
-    width: 30%;
-    height: 60%;
-    border-radius: 50%;
-    border: 1px solid black;
-    overflow: hidden;
-    background: #CA4DB6;
-  }
-  
-  .avatar {
-    max-width: 100%;
-    object-fit: cover;
-   opacity: 0.8;
-  }
-
-  p {
-    font-family: MuseoModerno;
-    color: #CA4DB6;
-    padding: 0;
-    margin: 0;
-    text-shadow: 5px 5px whitesmoke;
-  }
-  
-  .full-name {
-    margin-top: 10.5vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .first-name {
-      font-size: 5vw;
-      margin-bottom: -3vw;
-    }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
     
-    .prefix {
-      font-size: 2vw;
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
     }
+
+    .card-front {
+      background-image: url("assets/background-shapes.svg"), url("assets/background-img.png");
+      background-size: contain;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: space-between;
+
+      .img-container {
+        margin-top: 10%;
+        margin-left: 10%;
+        width: 30%;
+        height: 60%;
+        border-radius: 50%;
+        border: 1px solid black;
+        overflow: hidden;
+        background: #CA4DB6;
+      }
+      
+      .avatar {
+        max-width: 100%;
+        object-fit: cover;
+       opacity: 0.8;
+      }
     
-    .last-name {
-      font-size: 4vw;
+      p {
+        font-family: MuseoModerno;
+        color: #CA4DB6;
+        padding: 0;
+        margin: 0;
+        text-shadow: 5px 5px whitesmoke;
+      }
+      
+      .full-name {
+        margin-top: 10.5vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     
+        .first-name {
+          font-size: 5vw;
+          margin-bottom: -3vw;
+        }
+        
+        .prefix {
+          font-size: 2vw;
+        }
+        
+        .last-name {
+          font-size: 4vw;
+        
+        }
+      }
+    
+      .logos {
+        display: flex;
+        align-items: center;
+        margin-top: 5vw;
+        gap: 1vw;
+        margin-right: 1vw;
+    
+        .logo img {
+          width: 3vw;
+        }
+      }
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      border: 1px solid black;
+      border-radius: 3vw;
     }
   }
 
-  .logos {
-    display: flex;
-    align-items: center;
-    margin-top: 5vw;
-    gap: 1vw;
-    margin-right: -3vw;
-
-    .logo img {
-      width: 3vw;
-    }
+  .flipped {
+    transform: rotateY(180deg);
   }
 
   .turn-button {
     all: unset;
     height: min-content;
-    margin-right: 1.5vw;
+    margin-left: 55vw;
     margin-top: 1.5vw;
+    cursor: pointer;
+    position: relative;
   }
 
   .turn-icon {
     max-width: 3vw;
   }
-}
-
-.turn {
-  transform: rotateY('180deg');
 }
